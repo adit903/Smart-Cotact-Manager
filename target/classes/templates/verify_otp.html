@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymleaf.org" th:replace="base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>verify email</title>
+</head>
+<body>
+
+<section>
+	
+	  <div class="container text-center mt-5">
+		 <div class="row">
+		 <div class="col-md-8 offset-md-2">
+		 <div class="card">
+		 
+		 <div class="card-body mt-3">
+		     <div class="alert alert-success" role="alert">
+            OTP has sent successfully !
+          </div>
+          
+          
+          <!--message Box  -->
+
+          <!--  <div class="container" th:if="${session.message}">
+           
+           <div role="alert" class="alert alert-danger my-2 text-center">
+           
+           <span th:text="{session.message}"></span>
+           
+           </div>
+           
+           <th:block th:text="${#session.removeAttribute('message')}"></th:block>
+           
+           
+           </div> -->
+		    
+		   <form th:action="@{/verify-otp}" method="post">
+		   
+		   
+		   <div class="form-group">
+		   <input required="required" name="otp" type="text" placeholder="Enter otp here" class="form-control" />
+		   </div>
+
+		   </div>
+		   
+		  
+		   <div class="container text-center">
+		   <button class="btn btn-success">verify</button>
+		   </div>
+		   
+		   </form>
+		 </div>
+		 </div>
+		 </div>
+		 </div>
+		 </div>
+		
+    
+	
+	</section>
+	
+	
+	
+</body>
+</html>
